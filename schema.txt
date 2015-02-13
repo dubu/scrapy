@@ -1,6 +1,6 @@
 
-## scrapy_football
-create table scrapy_football(
+## scrapy_football_player
+create table scrapy_football_player(
 id int(11) not null auto_increment
 ,name varchar(100) not null
 ,nationality varchar(100)

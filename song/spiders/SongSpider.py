@@ -80,7 +80,7 @@ class SongSpider(CrawlSpider):
         open('test.song', 'wb').write(response.body)
         if 0 < len(cand):
             songItem['nationality'] = cand.extract()[0]
-        if attr == '출생':
+        if attr == u'출생':
             cand = tr.xpath('td[2]/text()[1]')
             if 0 < len(cand):
                 songItem['birthday'] = cand.extract()[0]
@@ -89,15 +89,15 @@ class SongSpider(CrawlSpider):
             for c in cand.xpath('a'):
                 birthplace += ' ' + c.xpath('text()[1]').extract()[0]
             songItem['birthplace'] = birthplace.strip()
-        if attr == '키':
+        if attr == u'키':
             cand = tr.xpath('td[2]/text()[1]')
             if 0 < len(cand):
                 songItem['height'] = cand.extract()[0]
-        if attr == '체중':
+        if attr == u'체중':
             cand = tr.xpath('td[2]/text()[1]')
             if 0 < len(cand):
                 songItem['weight'] = cand.extract()[0]
-        if attr == '포지션':
+        if attr == u'포지션':
             cand = tr.xpath("td[2]/span[@class='role']")
             positionCand = ''
             t = cand.xpath('text()[1]')
@@ -107,11 +107,11 @@ class SongSpider(CrawlSpider):
             for p in cand.xpath('a'):
                 positionCand += ' ' + p.xpath('text()[1]').extract()[0].strip()
             songItem['position'] = positionCand.strip()
-        if attr == '현 소속팀':
+        if attr == u'현 소속팀':
             cand = tr.xpath("td[2]/span[@class='org']/a[1]/text()[1]")
             if 0 < len(cand):
                 songItem['currentClub'] = cand.extract()[0]
-        if attr == '등번호':
+        if attr == u'등번호':
             cand = tr.xpath('td[2]/text()[1]')
             if 0 < len(cand):
                 songItem['number'] = cand.extract()[0]
