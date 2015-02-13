@@ -4,10 +4,10 @@ create table scrapy_football_player(
 id int(11) not null auto_increment
 ,name varchar(100) not null
 ,nationality varchar(100)
-,birthday   varchar(100)
-,birthplace  varchar(100)
-,height  varchar(45)
-,weight    varchar(45)
+,birthday varchar(100)
+,birthplace varchar(100)
+,height varchar(45)
+,weight varchar(45)
 ,position varchar(100)
 ,currentClub varchar(100)
 ,number varchar(100)
