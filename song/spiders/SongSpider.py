@@ -37,7 +37,7 @@ class SongSpider(CrawlSpider):
             print cand.extract()
             if 0 == len(cand):    continue
             attr = cand.extract()[0]
-            print attr
+            #print attr
             if attr == u'국적':
                 cand = tr.xpath("td[2]/span[@class='role']/a[1]/text()[1]")
                 if 0 < len(cand):
