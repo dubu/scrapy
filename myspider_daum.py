@@ -18,7 +18,6 @@ class BlogSpider(Spider):
         sel = Selector(response)
         #print sel.xpath(/html/body/center/table/tbody/tr/td[2]/table/tbody/tr/td/form/table[2]/tbody/tr/td[3]
         print '##############'
-        print sel.xpath('/html/body/div[3]/main/article/div/div/div/div/div/ul/li')
+        #print sel.xpath('/html/body/div[3]/main/article/div/div/div/div/div/ul/li')
         #return [Post(title=e.extract()) for e in response.css("h2 a::text")]
-        return [Post(title=e.extract()) for e in response.css("h2 a::text")]
-    
+        return [Post(title=e) for e in sel.xpath('/html/body/div[3]/main/article/div/div/div/div[2]/div/ol/li')]
