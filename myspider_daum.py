@@ -1,13 +1,9 @@
 __author__ = 'dubu9'
 
 from scrapy import Spider, Item, Field
-
-from scrapy.contrib.spiders import CrawlSpider, Rule
-from scrapy.contrib.linkextractors.sgml import SgmlLinkExtractor
 from scrapy.selector import Selector
 from song.items import SongItem
 import MySQLdb
-
 
 class Post(Item):
     title = Field()
